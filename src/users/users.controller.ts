@@ -22,25 +22,25 @@ export class UsersController {
 		return this.userService.findAll();
 	}
 	@Get(':id')
-	@ApiParam({ name: 'id' })
+	@ApiParam({ name: 'FIND ID' })
 	findOne(@Param() params): Promise<User> {
 		return this.userService.findOne(params.id);
 	}
 
 	@Post(':id')
-	@ApiParam({ name: 'id' })
+	@ApiParam({ name: 'CREATE' })
 	create(@Body() user): Promise<User> {
 		return this.userService.create(user);
 	}
 
 	@Put(':id')
-	@ApiParam({ name: 'id' })
+	@ApiParam({ name: 'CHANGE' })
 	update(@Body() user, @Param() params): Promise<User> {
 		return this.userService.update(user, params.id);
 	}
 
 	@Delete(':id')
-	@ApiParam({ name: 'id' })
+	@ApiParam({ name: 'DELETE' })
 	destroy(@Param() params): Promise<User> {
 		return this.userService.destroy(params.id);
 	}
